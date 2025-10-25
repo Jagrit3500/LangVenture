@@ -93,22 +93,6 @@ LangVenture uses a premium Apple-inspired design language:
 
 All design tokens are defined in `src/index.css` and `tailwind.config.ts`.
 
-## 📱 Demo Mode
-
-Click "Continue as Guest" on the login/register pages to explore the platform with demo data. No backend required!
-
-## 🌐 Deployment
-
-### Deploy with Lovable
-
-Simply open [Lovable](https://lovable.dev/projects/67b41630-056e-477b-8275-0e7fad438f70) and click **Share → Publish**.
-
-### Custom Domain
-
-Navigate to **Project > Settings > Domains** in Lovable to connect your custom domain (paid plan required).
-
-Read more: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain)
-
 ## 🤝 Contributing
 
 1. Fork the repository
@@ -117,17 +101,5 @@ Read more: [Setting up a custom domain](https://docs.lovable.dev/features/custom
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📄 License
 
-This project is built with [Lovable](https://lovable.dev) and is available for educational and portfolio purposes.
-
-## 🔗 Links
-
-- **Project URL**: https://lovable.dev/projects/67b41630-056e-477b-8275-0e7fad438f70
-- **Documentation**: See `CHANGELOG.md` for recent updates
-- **Support**: Open an issue on GitHub
-
----
-
-**Made with ❤️ using Lovable**
 
