@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Premium Apple-style color palette */
+    --background: 210 17% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Teal primary for CTAs and accents (#0EA5A4) */
+    --primary: 179 100% 36%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 179 100% 31%;
+
+    /* Soft secondary */
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    /* Muted backgrounds and text */
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Teal accent matching primary */
+    --accent: 179 100% 36%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Success green for progress */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 179 100% 36%;
+
+    --radius: 1rem;
+
+    /* Glassmorphism effects */
+    --glass-bg: 0 0% 100% / 0.7;
+    --glass-border: 214 32% 91% / 0.5;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(179 100% 95%) 0%, hsl(210 40% 98%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(210 40% 98%) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 2px 8px hsl(214 32% 91% / 0.4);
+    --shadow-elevated: 0 8px 32px hsl(214 32% 91% / 0.5);
+    --shadow-float: 0 12px 48px hsl(179 100% 36% / 0.15);
+
+    /* Animation */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 222 47% 5%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 7%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 7%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 179 100% 40%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 179 100% 45%;
+
+    --secondary: 217 33% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 179 100% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 179 100% 40%;
+
+    --glass-bg: 222 47% 7% / 0.8;
+    --glass-border: 217 33% 18% / 0.5;
+
+    --gradient-hero: linear-gradient(135deg, hsl(179 100% 15%) 0%, hsl(217 33% 12%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(222 47% 7%) 0%, hsl(217 33% 10%) 100%);
+    
+    --shadow-soft: 0 2px 8px hsl(0 0% 0% / 0.3);
+    --shadow-elevated: 0 8px 32px hsl(0 0% 0% / 0.4);
+    --shadow-float: 0 12px 48px hsl(179 100% 40% / 0.2);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+    letter-spacing: -0.015em;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply backdrop-blur-xl bg-white/70 dark:bg-card/70 border border-border/50;
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .shadow-float {
+    box-shadow: var(--shadow-float);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  /* Additional spacing utilities */
+  .section-padding {
+    @apply py-24 md:py-32;
+  }
+
+  .container-padding {
+    @apply px-6 md:px-12;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes ripple {
+    0% {
+      transform: scale(0.8);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+
+  .animate-ripple {
+    animation: ripple 1.5s infinite;
+  }
+}
