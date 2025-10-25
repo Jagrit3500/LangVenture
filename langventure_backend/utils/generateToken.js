@@ -1,0 +1,10 @@
+const jwt = require('jsonwebtoken');
+
+// Generate JWT token for user
+const generateToken = (userId) => {
+  return jwt.sign({ userId }, process.env.JWT_SECRET, {
+    expiresIn: '30d'
+  });
+};
+
+module.exports = generateToken;
